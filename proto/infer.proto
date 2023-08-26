@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package infer;
+
+message InferRequest {
+  repeated uint64 shape = 1;
+  repeated float data = 2;
+}
+
+message InferResponse {
+  repeated uint64 shape = 1;
+  repeated float data = 2;
+}
+
+service Infer {
+  rpc Infer(InferRequest) returns (InferResponse);
+}

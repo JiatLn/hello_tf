@@ -21,3 +21,17 @@ python pys/gen_model.py
 ```bash
 python pys/infer_local.py
 ```
+
+### rust grpc infer server
+
+- define infer proto
+
+- generate rust code
+
+- implement server
+
+- test server with rust
+
+```bash
+cargo run --bin infer_server
+```

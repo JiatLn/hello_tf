@@ -2,3 +2,5 @@
 
 /pys/resnet50
 /pys/request
+
+__pycache__

@@ -1,10 +1,12 @@
 import grpc
-import infer_pb2_grpc
-import infer_pb2
-from keras.applications.resnet50 import (decode_predictions, preprocess_input)
-from keras.preprocessing import image
 import numpy as np
 import tensorflow as tf
+from keras.applications.resnet50 import decode_predictions, preprocess_input
+from keras.preprocessing import image
+
+import infer_pb2
+import infer_pb2_grpc
+
 keras = tf.keras
 
 
@@ -23,7 +25,7 @@ def format_result(result: list):
     return '\n'.join([f'{item[1]}: {round(item[2] * 100, 2)}%' for item in result])
 
 
-def run_infer(img: np.ndarray, addr='localhost:5000') -> list:
+def run_infer(img: np.ndarray, addr='0.0.0.0:5000') -> list:
     with grpc.insecure_channel(addr) as chan:
         stub = infer_pb2_grpc.InferStub(chan)
         shape, data = img.shape, img.reshape(-1)

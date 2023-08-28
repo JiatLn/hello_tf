@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package process;
+
+message PreProcessRequest {
+  bytes image = 1;
+}
+
+message PreProcessResponse {
+  repeated uint64 shape = 1;
+  repeated float data = 2;
+}
+
+message PostProcessRequest {
+  repeated float data = 1;
+  repeated uint64 shape = 2;
+}
+
+message Pred {
+  string name = 1;
+  float prob = 2;
+}
+
+message PostProcessResponse {
+  repeated Pred preds = 1;
+}
+
+
+service Procss {
+  rpc PreProcess(PreProcessRequest) returns (PreProcessResponse);
+  rpc PostProcess(PostProcessRequest) returns (PostProcessResponse);
+}

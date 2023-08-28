@@ -56,3 +56,12 @@ python -m grpc_tools.protoc -I ../proto --python_out=. --grpc_python_out=. ../pr
 ```bash
 python pys/infer_client.py
 ```
+
+### Python process grpc server
+
+- generate python code
+
+```bash
+cd pys
+python -m grpc_tools.protoc -I ../proto --python_out=. --grpc_python_out=. ../proto/process.proto
+```

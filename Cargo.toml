@@ -7,10 +7,16 @@ edition = "2021"
 
 [dependencies]
 async-trait = "0.1.73"
+axum = {version="0.6.20", features=["multipart"]}
 prost = "0.11.9"
+serde = {version = "1.0.186", features = ["derive"]}
+serde_json = "1.0.105"
 tensorflow = "0.21.0"
 tokio = {version = "1.32.0", features = ["full"]}
 tonic = "0.9.2"
+tower-http = {version="0.4.3", features=["full"]}
+tracing = "0.1.37"
+tracing-subscriber = "0.3.17"
 
 [build-dependencies]
 tonic-build = "0.9.2"

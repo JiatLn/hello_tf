@@ -29,7 +29,7 @@ class Processer(process_pb2_grpc.ProcssServicer):
         preds = np.array(request.data).reshape(
             request.shape).astype(np.float32)
         preds = decode_predictions(preds, top=3)[0]
-        preds = [process_pb2.Preb(name=name, prob=prob)
+        preds = [process_pb2.Pred(name=name, prob=prob)
                  for _, name, prob in preds]
         return process_pb2.PostProcessResponse(preds=preds)
 

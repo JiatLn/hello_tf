@@ -7,6 +7,7 @@ from PIL import Image
 from transformers import (AutoModelForSemanticSegmentation,
                           SegformerImageProcessor)
 
+
 processor = SegformerImageProcessor.from_pretrained(
     "mattmdjaga/segformer_b2_clothes")
 model = AutoModelForSemanticSegmentation.from_pretrained(

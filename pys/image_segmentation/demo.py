@@ -30,8 +30,6 @@ upsampled_logits = nn.functional.interpolate(
 
 pred_seg = upsampled_logits.argmax(dim=1)[0]
 
-# plt.imshow(pred_seg)
-
 print(pred_seg.shape)
 
 plt.imsave("output/test.png", pred_seg)

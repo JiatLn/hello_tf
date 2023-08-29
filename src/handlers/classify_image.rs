@@ -43,7 +43,6 @@ pub async fn classify_image(
                 prob: p.prob,
             })
             .collect();
-        println!("classify_image called");
         Json(ClassifyResult { image, preds })
     } else {
         Json(ClassifyResult {

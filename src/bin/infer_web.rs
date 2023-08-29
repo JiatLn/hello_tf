@@ -6,7 +6,7 @@ fn main() {
 
     rt.block_on(async {
         if std::env::var_os("RUST_LOG").is_none() {
-            std::env::set_var("RUST_LOG", "infer_web=info")
+            std::env::set_var("RUST_LOG", "infer_web=debug")
         }
 
         tracing_subscriber::fmt::init();

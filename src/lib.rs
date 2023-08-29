@@ -3,6 +3,8 @@ mod handlers;
 mod infer;
 mod process;
 
+pub use infer::*;
+
 use axum::{
     routing::{get, post},
     Router,
